@@ -1,0 +1,5 @@
+[development]
+app ansible_ssh_host=local.dioniberica.com ansible_ssh_user=ubuntu
+
+[production]
+0.0.0.0 ansible_ssh_user=dioniberica

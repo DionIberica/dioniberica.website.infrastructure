@@ -1,0 +1,21 @@
+---
+
+- hosts: development
+  remote_user: ubuntu
+  sudo: yes
+  vars_files:
+    - vars.yml
+    - secrets.yml
+  vars:
+    domain: local.dioniberica.com
+    certificates_folder: /home/{{ user }}/shared/certificates
+    node_env: development
+  vars_prompt:
+    - name: "create_certificates"
+      prompt: "Create SSL Certificates (yes, no)"
+      default: "no"
+
+  roles:
+    - common
+    - frontend
+    - backend
