@@ -1,21 +1,25 @@
 ---
 
 - hosts: development
-  remote_user: ubuntu
-  sudo: yes
+  become: yes
   vars_files:
     - vars.yml
     - secrets.yml
   vars:
-    domain: local.dioniberica.com
+    domain: 'local.{{ top_domain }}'
     certificates_folder: /home/{{ user }}/shared/certificates
     node_env: development
   vars_prompt:
     - name: "create_certificates"
       prompt: "Create SSL Certificates (yes, no)"
       default: "no"
+      private: no
 
   roles:
     - common
     - frontend
     - backend
+
+  handlers:
+    - name: nginx reload
+      service: name=nginx state=reloaded
