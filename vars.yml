@@ -5,4 +5,4 @@ top_domain: '{{ user }}.com'
 description: Dion Iberica
 github_user_name: DionIberica
 webmaster_email: fcsonline@gmail.com
-info_email: info@dioniberica.com
+info_email: 'info@{{ top_domain }}'
