@@ -6,7 +6,3 @@ description: Dion Iberica
 github_user_name: DionIberica
 webmaster_email: fcsonline@gmail.com
 info_email: 'info@{{ top_domain }}'
-
-# Development keys
-vault_stripe_es_api_key: sk_test_XCQ8tR2I83v6UnxXS4yTAtjP
-vault_stripe_pt_api_key: sk_test_XCQ8tR2I83v6UnxXS4yTAtjP
