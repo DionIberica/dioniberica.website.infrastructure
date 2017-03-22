@@ -8,3 +8,8 @@ export MAILGUN_API_KEY={{ vault_mailgun_api_key }}
 export MAILGUN_DOMAIN={{ domain }}
 export INFO_EMAIL={{ info_email }}
 export WEBMASTER_EMAIL={{ webmaster_email }}
+
+export STRIPE_ES={{ vault_stripe_es_api_key }}
+export STRIPE_CA={{ vault_stripe_es_api_key }}
+export STRIPE_EN={{ vault_stripe_pt_api_key }}
+export STRIPE_PT={{ vault_stripe_pt_api_key }}
