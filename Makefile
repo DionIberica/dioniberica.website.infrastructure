@@ -46,9 +46,9 @@ provision:
 	ansible-playbook provision.yml -i hosts -e ansible_host=$$IP -e 'ansible_user=root'
 
 dev:
-	ansible-playbook development.yml -i hosts --ask-sudo-pass -e ansible_user=$(container) -e 'ansible_python_interpreter=/usr/bin/python2.7' --ask-vault-pass
+	ansible-playbook -i hosts playbook.yml -l development --ask-sudo-pass -e ansible_user=$(container) -e 'ansible_python_interpreter=/usr/bin/python2.7' --ask-vault-pass
 
 pro:
-	ansible-playbook production.yml -i hosts --ask-sudo-pass -e ansible_user=$(container) -e 'ansible_python_interpreter=/usr/bin/python2.7'  --ask-vault-pass
+	ansible-playbook -i hosts playbook.yml -l production  --ask-sudo-pass -e ansible_user=$(container) -e 'ansible_python_interpreter=/usr/bin/python2.7' --ask-vault-pass
 
 i_feel_lucky: submodules setup dev

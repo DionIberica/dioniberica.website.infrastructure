@@ -1,18 +1,11 @@
 ---
 
-- hosts: production
+- hosts: all
   become: yes
+
   vars_files:
     - vars.yml
     - secrets.yml
-  vars:
-    domain: '{{ top_domain }}'
-    certificates_folder: /etc/letsencrypt/live
-    node_env: production
-
-    # Development public keys
-    public_stripe_es_api_key: TODO
-    public_stripe_pt_api_key: TODO
 
   vars_prompt:
     - name: "create_certificates"
