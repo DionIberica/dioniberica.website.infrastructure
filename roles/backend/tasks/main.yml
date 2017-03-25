@@ -2,4 +2,5 @@
   - include: folders.yml
   - include: repository.yml
   - include: node.yml
+  - include: redis.yml
   - include: initialize.yml

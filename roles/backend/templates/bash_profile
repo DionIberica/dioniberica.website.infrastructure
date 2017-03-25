@@ -18,3 +18,5 @@ export STRIPE_ES={{ vault_stripe_es_api_key }}
 export STRIPE_CA={{ vault_stripe_es_api_key }}
 export STRIPE_EN={{ vault_stripe_pt_api_key }}
 export STRIPE_PT={{ vault_stripe_pt_api_key }}
+
+export REDIS_SECRET_KEY={{ vault_redis_secret_key }}
