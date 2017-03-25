@@ -43,7 +43,7 @@ setup:
 
 provision:
 	@read -p "Enter IP address: " IP; \
-	ansible-playbook provision.yml -i hosts -e ansible_host=$$IP -e 'ansible_user=root'
+	ansible-playbook -i hosts provision.yml -l production -e ansible_host=$$IP -e 'ansible_user=root' --ask-vault-pass
 
 dev:
 	ansible-playbook -i hosts playbook.yml -l development --ask-sudo-pass -e ansible_user=$(container) -e 'ansible_python_interpreter=/usr/bin/python2.7' --ask-vault-pass
