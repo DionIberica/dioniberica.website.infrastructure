@@ -5,7 +5,7 @@ export GEM_HOME="$HOME:~/.gem"
 
 export NODE_ENV={{ node_env }}
 export MAILGUN_API_KEY={{ vault_mailgun_api_key }}
-export MAILGUN_DOMAIN={{ domain }}
+export MAILGUN_DOMAIN={{ top_domain }}
 export INFO_EMAIL={{ info_email }}
 export WEBMASTER_EMAIL={{ webmaster_email }}
 
