@@ -9,6 +9,9 @@ export MAILGUN_DOMAIN={{ top_domain }}
 export INFO_EMAIL={{ info_email }}
 export WEBMASTER_EMAIL={{ webmaster_email }}
 
+export TEST_STRIPE_PUBLIC={{ test_public_stripe_api_key }}
+export TEST_STRIPE={{ test_stripe_api_key }}
+
 export STRIPE_PUBLIC_ES={{ public_stripe_es_api_key }}
 export STRIPE_PUBLIC_CA={{ public_stripe_es_api_key }}
 export STRIPE_PUBLIC_EN={{ public_stripe_pt_api_key }}
