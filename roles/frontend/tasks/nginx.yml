@@ -33,6 +33,9 @@
      set_fact:
        csp_rule: "{{ csp_rules | join('; ') }}"
 
+   - name: writes the nginx config
+     template: src=templates/nginx.conf.j2 dest=/etc/nginx/nginx.conf mode=0644
+
    - name: writes the nginx site
      template: src=templates/nginx.site.j2 dest=/etc/nginx/sites-available/www.{{ domain }} mode=0644
 

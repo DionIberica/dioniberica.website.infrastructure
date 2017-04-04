@@ -15,6 +15,7 @@ server {
 
   ssl_certificate {{ certificates_folder }}/www.{{ domain }}/fullchain.pem;
   ssl_certificate_key {{ certificates_folder }}/www.{{ domain }}/privkey.pem;
+
   ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
   ssl_prefer_server_ciphers on;
   ssl_dhparam /etc/ssl/certs/dhparam.pem;
@@ -26,8 +27,13 @@ server {
   add_header Strict-Transport-Security max-age=15768000;
   {% endif %}
 
+  limit_conn conn_limit_per_ip 10;
+  limit_req zone=req_limit_per_ip burst=10 nodelay;
   client_max_body_size 1G;
+  client_body_timeout 5s;
+  client_header_timeout 5s;
   keepalive_timeout 5;
+  send_timeout 10;
   server_tokens off;
 
   add_header X-Frame-Options SAMEORIGIN;
