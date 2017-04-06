@@ -4,6 +4,7 @@ set -e
 
 WWW=$HOME/shared/public
 GIT_REPO=$HOME/shared/repositories/dynamic
+TMP_GIT_CLONE=$HOME/tmp/git/dynamic
 PUBLIC_PROD_WWW=$WWW/dynamic
 PUBLIC_NEXT_WWW=$WWW/next.dynamic
 
@@ -23,13 +24,17 @@ fi
 
 echo 'Restarting node service...'
 
+rm -rf "$TMP_GIT_CLONE"
+git clone -b "$GIT_BRANCH" "$GIT_REPO" "$TMP_GIT_CLONE"
+
+pushd "$TMP_GIT_CLONE"
+  yarn install
+popd
+
 # Fix downtime
 rm -Rf "$PUBLIC_WWW"
 
-git clone -b "$GIT_BRANCH" "$GIT_REPO" "$PUBLIC_WWW"
-
-cd "$PUBLIC_WWW"
-npm install
+mv "$TMP_GIT_CLONE" "$PUBLIC_WWW"
 
 cd "$HOME/shared/config"
 pm2 startOrReload "$USER.config.js" --only "$SERVICE" --env "$BACKEND_ENV"
