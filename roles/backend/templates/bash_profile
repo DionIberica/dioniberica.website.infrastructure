@@ -9,6 +9,8 @@ export MAILGUN_DOMAIN={{ top_domain }}
 export INFO_EMAIL={{ info_email }}
 export WEBMASTER_EMAIL={{ webmaster_email }}
 
+export RAVEN_DSN={{ vault_raven_dsn }}
+
 export TEST_STRIPE_PUBLIC={{ test_public_stripe_api_key }}
 export TEST_STRIPE={{ test_stripe_api_key }}
 
