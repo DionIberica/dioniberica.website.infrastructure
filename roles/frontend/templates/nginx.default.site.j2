@@ -1,0 +1,19 @@
+server {
+  server_name _;
+  root /opt/nginx/html;
+
+  listen 80 default_server;
+  listen [::]:80;
+
+  rewrite ^ $scheme://www.{{ domain }}$request_uri? permanent;
+
+#  limit_conn conn_limit_per_ip 10;
+#  limit_req zone=req_limit_per_ip burst=10 nodelay;
+
+  client_max_body_size 1G;
+  client_body_timeout 5s;
+  client_header_timeout 5s;
+  keepalive_timeout 5;
+  send_timeout 10;
+  server_tokens off;
+}
