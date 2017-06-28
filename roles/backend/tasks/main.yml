@@ -3,4 +3,5 @@
   - include: repository.yml
   - include: node.yml
   - include: redis.yml
+  - include: mysql.yml
   - include: initialize.yml

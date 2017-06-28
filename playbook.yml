@@ -14,8 +14,8 @@
       private: no
 
   roles:
-    - common
-    - frontend
+    #    - common
+    #    - frontend
     - backend
 
   handlers:
