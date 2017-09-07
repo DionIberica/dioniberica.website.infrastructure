@@ -2,4 +2,4 @@
 development ansible_ssh_host=local.dioniberica.com
 
 [production]
-production ansible_ssh_host=139.59.173.201
+production ansible_ssh_host=dioniberica.com
