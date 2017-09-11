@@ -25,9 +25,6 @@
    - name: writes the nginx next site
      template: src=templates/nginx.next.site.j2 dest=/etc/nginx/sites-available/next.{{ domain }} mode=0644
 
-   - name: writes the nginx default site
-     template: src=templates/nginx.default.site.j2 dest=/etc/nginx/sites-available/default.{{ domain }} mode=0644
-
    - name: writes the lua lang module
      notify: nginx reload
      copy:
@@ -41,8 +38,4 @@
 
    - name: Create symlink for next site
      file: src=/etc/nginx/sites-available/next.{{ domain }} dest=/etc/nginx/sites-enabled/next.{{ domain }} state=link
-     notify: nginx reload
-
-   - name: Create symlink for default site
-     file: src=/etc/nginx/sites-available/default.{{ domain }} dest=/etc/nginx/sites-enabled/default.{{ domain }} state=link
      notify: nginx reload
