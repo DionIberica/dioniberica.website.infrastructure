@@ -25,6 +25,7 @@ git clone -b "$GIT_BRANCH" "$GIT_REPO" "$TMP_GIT_CLONE"
 
 pushd "$TMP_GIT_CLONE"
   bundle install --path "$HOME/.gem"
+  bundle exec rake i18n
   bundle exec dato dump --token="$DATO_API_TOKEN"
   JEKYLL_ENV="$JEKYLL_ENV" bundle exec jekyll build --source "$TMP_GIT_CLONE" --destination "$PUBLIC_WWW"
 popd
