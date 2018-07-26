@@ -15,6 +15,7 @@
           - https://www.googletagmanager.com
           - https://cdnjs.cloudflare.com
           - https://chimpstatic.com
+          - https://bat.bing.com
         img-src:
           - "'self'"
           - https://*.stripe.com
