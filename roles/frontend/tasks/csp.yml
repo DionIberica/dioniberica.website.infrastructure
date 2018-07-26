@@ -13,6 +13,7 @@
           - https://www.google-analytics.com
           - https://maps.googleapis.com
           - https://www.googletagmanager.com
+          - https://www.googleadservices.com
           - https://cdnjs.cloudflare.com
           - https://chimpstatic.com
           - https://bat.bing.com
@@ -43,3 +44,4 @@
         connect-src:
           - "'self'"
           - https://*.stripe.com
+          - https://bat.bing.com
